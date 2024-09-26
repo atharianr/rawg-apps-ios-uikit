@@ -120,13 +120,37 @@
 		7A62E13C2CA41355009AC2F1 /* NetworkSource */ = {
 			isa = PBXGroup;
 			children = (
-				7A62E1432CA446EE009AC2F1 /* GameListResponse.swift */,
-				7A62E14B2CA44D3D009AC2F1 /* NetworkService.swift */,
-				7A62E14D2CA4555F009AC2F1 /* GameModel.swift */,
-				7A62E1552CA486DA009AC2F1 /* GameDetailModel.swift */,
-				7A62E1532CA485DF009AC2F1 /* GameDetailResponse.swift */,
+				7AA4D4702CA5908800BF1E37 /* Response */,
+				7AA4D4722CA590B200BF1E37 /* Service */,
+				7AA4D4712CA590A800BF1E37 /* Model */,
 			);
 			path = NetworkSource;
+			sourceTree = "<group>";
+		};
+		7AA4D4702CA5908800BF1E37 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7A62E1432CA446EE009AC2F1 /* GameListResponse.swift */,
+				7A62E1532CA485DF009AC2F1 /* GameDetailResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		7AA4D4712CA590A800BF1E37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A62E14D2CA4555F009AC2F1 /* GameModel.swift */,
+				7A62E1552CA486DA009AC2F1 /* GameDetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AA4D4722CA590B200BF1E37 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7A62E14B2CA44D3D009AC2F1 /* NetworkService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
