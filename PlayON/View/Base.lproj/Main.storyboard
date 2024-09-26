@@ -12,7 +12,7 @@
         <!--GAMEON-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlayON" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
         <!--Detail View Controller-->
         <scene sceneID="TUj-fy-JSv">
             <objects>
-                <viewController id="BW4-zR-41f" customClass="DetailViewController" customModule="PlayON" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BW4-zR-41f" customClass="DetailViewController" customModule="GameON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Al-QW-aFe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,22 +272,6 @@
             </objects>
             <point key="canvasLocation" x="1061.25" y="3.1690140845070425"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="pCQ-SF-g9w">
-            <objects>
-                <viewController id="RsQ-rX-T90" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9b0-eR-mXR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="xPB-h3-Znw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="SnP-Xg-koQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hVg-2I-9mq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1061" y="927"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VFg-3W-lA1">
             <objects>
@@ -301,17 +285,87 @@
                     </tabBar>
                     <connections>
                         <segue destination="hgq-lB-oX8" kind="relationship" relationship="viewControllers" id="F6l-sD-Gzu"/>
-                        <segue destination="RsQ-rX-T90" kind="relationship" relationship="viewControllers" id="fW9-X3-dLQ"/>
+                        <segue destination="iMu-dK-nqI" kind="relationship" relationship="viewControllers" id="2Hv-vz-k6Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hd-vn-nrZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="63.75" y="3.1690140845070425"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="i4G-wd-kBl">
+            <objects>
+                <viewController id="iMu-dK-nqI" customClass="ProfileViewController" customModule="GameON" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E7p-TM-xHY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="Llc-NT-eqd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="tUZ-D6-z34"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RlZ-Wf-sbK">
+                                <rect key="frame" x="0.0" y="300" width="320" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="nrp-xV-xwX"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="XBw-Q1-tN7">
+                                <rect key="frame" x="78" y="218.5" width="164" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="GnD-X6-I3B"/>
+                                    <constraint firstAttribute="width" constant="164" id="rns-MO-AmL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atharian Rahmadani" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPv-2H-isI">
+                                <rect key="frame" x="56.5" y="406.5" width="207.5" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" name="ColorPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Android Developer at Axiata Digital Labs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVK-GR-P0W">
+                                <rect key="frame" x="30" y="441.5" width="260" height="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" name="ColorSecondary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FMm-r8-Kw1"/>
+                        <constraints>
+                            <constraint firstItem="FMm-r8-Kw1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QPv-2H-isI" secondAttribute="trailing" constant="20" id="31q-4v-YbX"/>
+                            <constraint firstItem="RlZ-Wf-sbK" firstAttribute="leading" secondItem="FMm-r8-Kw1" secondAttribute="leading" id="63L-Fw-e6D"/>
+                            <constraint firstItem="FMm-r8-Kw1" firstAttribute="trailing" secondItem="RlZ-Wf-sbK" secondAttribute="trailing" id="FEj-0A-pV5"/>
+                            <constraint firstItem="DVK-GR-P0W" firstAttribute="centerX" secondItem="E7p-TM-xHY" secondAttribute="centerX" id="LMx-bJ-Wdf"/>
+                            <constraint firstItem="Llc-NT-eqd" firstAttribute="leading" secondItem="FMm-r8-Kw1" secondAttribute="leading" id="Lj6-HI-6i4"/>
+                            <constraint firstItem="QPv-2H-isI" firstAttribute="centerX" secondItem="E7p-TM-xHY" secondAttribute="centerX" id="Wxa-Ks-7oh"/>
+                            <constraint firstItem="RlZ-Wf-sbK" firstAttribute="top" secondItem="Llc-NT-eqd" secondAttribute="bottom" id="Y8W-Ij-WYr"/>
+                            <constraint firstItem="DVK-GR-P0W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FMm-r8-Kw1" secondAttribute="leading" constant="20" id="bbx-lO-N6f"/>
+                            <constraint firstItem="QPv-2H-isI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FMm-r8-Kw1" secondAttribute="leading" constant="20" id="eIN-Vl-HuF"/>
+                            <constraint firstItem="FMm-r8-Kw1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DVK-GR-P0W" secondAttribute="trailing" constant="20" id="eaS-Nj-4iZ"/>
+                            <constraint firstItem="Llc-NT-eqd" firstAttribute="top" secondItem="E7p-TM-xHY" secondAttribute="top" id="fWN-Uz-3uU"/>
+                            <constraint firstItem="XBw-Q1-tN7" firstAttribute="centerX" secondItem="FMm-r8-Kw1" secondAttribute="centerX" id="i7V-5A-ne6"/>
+                            <constraint firstItem="QPv-2H-isI" firstAttribute="top" secondItem="XBw-Q1-tN7" secondAttribute="bottom" constant="24" id="jhk-7c-Uqc"/>
+                            <constraint firstItem="XBw-Q1-tN7" firstAttribute="centerY" secondItem="RlZ-Wf-sbK" secondAttribute="centerY" id="mvl-2f-UPW"/>
+                            <constraint firstItem="DVK-GR-P0W" firstAttribute="top" secondItem="QPv-2H-isI" secondAttribute="bottom" constant="8" id="o0P-ga-e3R"/>
+                            <constraint firstItem="FMm-r8-Kw1" firstAttribute="trailing" secondItem="Llc-NT-eqd" secondAttribute="trailing" id="ppF-tr-tyu"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="Uk1-3H-pKX"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="XBw-Q1-tN7" id="bzb-cz-6wg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YnL-jK-utc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="897"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ProfilePicture" width="360" height="540"/>
         <image name="gamecontroller" catalog="system" width="128" height="79"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="ColorPrimary">
             <color red="0.23499999940395355" green="0.2630000114440918" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -24,10 +24,11 @@
 		7A62E1542CA485DF009AC2F1 /* GameDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62E1532CA485DF009AC2F1 /* GameDetailResponse.swift */; };
 		7A62E1562CA486DA009AC2F1 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62E1552CA486DA009AC2F1 /* GameDetailModel.swift */; };
 		7A62E15C2CA4CF43009AC2F1 /* UIView-Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 7A62E15B2CA4CF43009AC2F1 /* UIView-Shimmer */; };
+		7AA4D4742CA592DB00BF1E37 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4D4732CA592DB00BF1E37 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7A199E6F2CA02DE20031E896 /* PlayON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayON.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A199E6F2CA02DE20031E896 /* GameON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A199E722CA02DE20031E896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A199E742CA02DE20031E896 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7A199E762CA02DE20031E896 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		7A62E1512CA46BBF009AC2F1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7A62E1532CA485DF009AC2F1 /* GameDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailResponse.swift; sourceTree = "<group>"; };
 		7A62E1552CA486DA009AC2F1 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
+		7AA4D4732CA592DB00BF1E37 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 		7A199E702CA02DE20031E896 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A199E6F2CA02DE20031E896 /* PlayON.app */,
+				7A199E6F2CA02DE20031E896 /* GameON.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +105,7 @@
 				7A62E1342CA40859009AC2F1 /* GameTableViewCell.swift */,
 				7A62E1352CA40859009AC2F1 /* GameTableViewCell.xib */,
 				7A62E1512CA46BBF009AC2F1 /* DetailViewController.swift */,
+				7AA4D4732CA592DB00BF1E37 /* ProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,7 +174,7 @@
 			);
 			name = PlayON;
 			productName = PlayON;
-			productReference = 7A199E6F2CA02DE20031E896 /* PlayON.app */;
+			productReference = 7A199E6F2CA02DE20031E896 /* GameON.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -260,6 +263,7 @@
 				7A199E752CA02DE20031E896 /* SceneDelegate.swift in Sources */,
 				7A62E14C2CA44D3D009AC2F1 /* NetworkService.swift in Sources */,
 				7A62E14E2CA4555F009AC2F1 /* GameModel.swift in Sources */,
+				7AA4D4742CA592DB00BF1E37 /* ProfileViewController.swift in Sources */,
 				7A62E1362CA40859009AC2F1 /* GameTableViewCell.swift in Sources */,
 				7A62E1562CA486DA009AC2F1 /* GameDetailModel.swift in Sources */,
 				7A62E1542CA485DF009AC2F1 /* GameDetailResponse.swift in Sources */,
@@ -428,8 +432,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atharianr.PlayON;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atharianr.GameON;
+				PRODUCT_NAME = GameON;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,8 +460,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atharianr.PlayON;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atharianr.GameON;
+				PRODUCT_NAME = GameON;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
