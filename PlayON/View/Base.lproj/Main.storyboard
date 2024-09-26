@@ -18,20 +18,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vl1-Wv-akv">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="120" width="320" height="399"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2XU-OR-NIY">
                                 <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search games here..." translatesAutoresizingMaskIntoConstraints="NO" id="b1c-Pc-pqJ">
+                                <rect key="frame" x="8" y="64" width="304" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ssf-BS-3P3"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="b1c-Pc-pqJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="0vb-nr-Yyt"/>
                             <constraint firstItem="vl1-Wv-akv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7UP-dK-AFt"/>
-                            <constraint firstItem="vl1-Wv-akv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Je8-An-k5A"/>
+                            <constraint firstItem="vl1-Wv-akv" firstAttribute="top" secondItem="b1c-Pc-pqJ" secondAttribute="bottom" id="CAW-CN-9gE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vl1-Wv-akv" secondAttribute="trailing" id="PeY-kf-6Nb"/>
+                            <constraint firstItem="b1c-Pc-pqJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cIZ-SQ-XkA"/>
+                            <constraint firstItem="b1c-Pc-pqJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ezf-5b-LO3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vl1-Wv-akv" secondAttribute="bottom" id="tOU-4i-tFM"/>
                             <constraint firstItem="2XU-OR-NIY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xUg-7e-kSg"/>
                             <constraint firstItem="2XU-OR-NIY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y6J-k2-2vL"/>
@@ -45,6 +55,7 @@
                     <connections>
                         <outlet property="gameTableView" destination="vl1-Wv-akv" id="7UW-6f-KcJ"/>
                         <outlet property="loadingIndicator" destination="2XU-OR-NIY" id="9nd-RA-EGu"/>
+                        <outlet property="searchBar" destination="b1c-Pc-pqJ" id="Eas-rK-E2Q"/>
                         <segue destination="BW4-zR-41f" kind="show" identifier="moveToDetail" id="MIO-6e-wnc"/>
                     </connections>
                 </viewController>

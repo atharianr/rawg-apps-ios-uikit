@@ -13,37 +13,55 @@ class ViewController: UIViewController {
 
     @IBOutlet private var gameTableView: UITableView!
 
+    @IBOutlet weak var searchBar: UISearchBar!
+
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     private var gameList: [GameModel] = []
 
+    private var network: NetworkService?
+
+    private var searchWorkItem: DispatchWorkItem?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        network = NetworkService()
+        searchBar.delegate = self
         gameTableView.dataSource = self
         gameTableView.delegate = self
         gameTableView.register(
             UINib(nibName: "GameTableViewCell", bundle: nil),
             forCellReuseIdentifier: "gameTableViewCell"
         )
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         getGameList()
     }
 
     func getGameList() {
-        let network = NetworkService()
-        network.getGameList { gameList in
+        network?.getGameList { gameList in
             self.gameList = gameList
             self.gameTableView.reloadData()
+            self.gameTableView.isHidden = false
             self.loadingIndicator.stopAnimating()
             self.loadingIndicator.isHidden = true
         }
 
-        if gameList.isEmpty {
-            loadingIndicator.isHidden = false
-            loadingIndicator.startAnimating()
-        }
+        gameTableView.isHidden = true
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+    }
+
+    func getSearchGameList(query: String) {
+        network?.getSearchGameList(query: query, completion: { gameList in
+            self.gameList = gameList
+            self.gameTableView.reloadData()
+            self.gameTableView.isHidden = false
+            self.loadingIndicator.stopAnimating()
+            self.loadingIndicator.isHidden = true
+        })
+
+        gameTableView.isHidden = true
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
     }
 }
 
@@ -115,5 +133,20 @@ extension ViewController: UITableViewDelegate {
                 detaiViewController.gameModel = sender as? GameModel
             }
         }
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchWorkItem?.cancel()
+
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.getSearchGameList(query: searchText)
+            debugPrint(searchText)
+        }
+
+        searchWorkItem = workItem
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem)
     }
 }

@@ -38,7 +38,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setTemplateWithSubviews(true, viewBackgroundColor: UIColor.gray)
+        setupView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,11 +48,27 @@ class DetailViewController: UIViewController {
     func getGameDetail() {
         let network = NetworkService()
         network.getGameDetail(id: gameModel?.id ?? 0, completion: { game in
-            self.setupView(gameDetailModel: game)
+            self.bindData(gameDetailModel: game)
         })
     }
 
-    private func setupView(gameDetailModel: GameDetailModel?) {
+    private func setupView() {
+        view.setTemplateWithSubviews(true, viewBackgroundColor: UIColor.gray)
+
+        smallGameImage.layer.masksToBounds = false
+        smallGameImage.layer.cornerRadius = 8
+        smallGameImage.clipsToBounds = true
+
+        gameImage.layer.masksToBounds = false
+        gameImage.layer.cornerRadius = 16
+        gameImage.clipsToBounds = true
+
+        imageOverlayView.layer.masksToBounds = false
+        imageOverlayView.layer.cornerRadius = 16
+        imageOverlayView.clipsToBounds = true
+    }
+
+    private func bindData(gameDetailModel: GameDetailModel?) {
         if let game = gameDetailModel {
             loadingIndicator.isHidden = false
             loadingIndicator.startAnimating()
@@ -65,9 +81,6 @@ class DetailViewController: UIViewController {
             gameEsrbRatingLabel.text = game.esrbRating
             gameDescriptionLabel.text = game.description
 
-            smallGameImage.layer.masksToBounds = false
-            smallGameImage.layer.cornerRadius = 8
-            smallGameImage.clipsToBounds = true
             smallGameImage.kf.setImage(
                 with: URL(string: game.imageUrl),
                 completionHandler: { _ in
@@ -76,9 +89,6 @@ class DetailViewController: UIViewController {
                 }
             )
 
-            gameImage.layer.masksToBounds = false
-            gameImage.layer.cornerRadius = 16
-            gameImage.clipsToBounds = true
             gameImage.kf.setImage(
                 with: URL(string: game.imageAdditionalUrl),
                 completionHandler: { _ in
@@ -86,10 +96,6 @@ class DetailViewController: UIViewController {
                     self.loadingIndicator.isHidden = true
                 }
             )
-
-            imageOverlayView.layer.masksToBounds = false
-            imageOverlayView.layer.cornerRadius = 16
-            imageOverlayView.clipsToBounds = true
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.view.setTemplateWithSubviews(false)
