@@ -13,7 +13,7 @@ class GameModel {
     let rating: Double
     let releaseDate: String
     let imageUrl: String
-
+    
     init(
         id: Int,
         title: String,

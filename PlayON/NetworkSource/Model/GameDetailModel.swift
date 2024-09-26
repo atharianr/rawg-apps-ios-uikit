@@ -19,7 +19,7 @@ class GameDetailModel {
     let publisher: String
     let platform: String
     let description: String
-
+    
     init(
         id: Int,
         title: String,
