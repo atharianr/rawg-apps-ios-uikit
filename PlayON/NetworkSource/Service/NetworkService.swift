@@ -10,8 +10,18 @@ import Alamofire
 
 class NetworkService {
     private let baseUrl = "https://api.rawg.io/api/"
-    private let apiKey = "bed6f0e5ab8f4c79ae81100b9da09f04"
-    
+    private var apiKey: String {
+        guard let filePath = Bundle.main.path(forResource: "GameON-Info", ofType: "plist") else {
+            fatalError("Couldn't find file 'GameON-Info.plist'.")
+        }
+        
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "API_KEY") as? String else {
+            fatalError("Couldn't find key 'API_KEY' in 'GameON-Info.plist'.")
+        }
+        return value
+    }
+
     func getGameList(completion: @escaping ([GameModel]) -> Void) {
         let url = "\(baseUrl)games"
         let parameters: [String: String] = [
@@ -19,7 +29,7 @@ class NetworkService {
             "page_size": "10",
             "page": "1"
         ]
-        
+
         AF.request(url, parameters: parameters).responseDecodable(of: GameListResponse.self) { response in
             switch response.result {
             case .success(let gameList):
@@ -43,14 +53,14 @@ class NetworkService {
             }
         }
     }
-    
+
     func getSearchGameList(query: String, completion: @escaping ([GameModel]) -> Void) {
         let url = "\(baseUrl)games"
         let parameters: [String: String] = [
             "key": apiKey,
             "search": query
         ]
-        
+
         AF.request(url, parameters: parameters).responseDecodable(of: GameListResponse.self) { response in
             switch response.result {
             case .success(let gameList):
@@ -74,11 +84,11 @@ class NetworkService {
             }
         }
     }
-    
+
     func getGameDetail(id: Int, completion: @escaping (GameDetailModel?) -> Void) {
         let url = "\(baseUrl)games/\(id)"
         let parameters: [String: String] = ["key": apiKey]
-        
+
         AF.request(url, parameters: parameters).responseDecodable(of: GameDetailResponse.self) { response in
             switch response.result {
             case .success(let gameDetailResponse):
@@ -86,12 +96,11 @@ class NetworkService {
                 let platforms = gameDetailResponse.platforms?.map {
                     $0.platform?.name ?? ""
                 }.joined(separator: ", ") ?? "-"
-                
+
                 let gameModel = GameDetailModel(
                     id: gameDetailResponse.id ?? 0,
                     title: gameDetailResponse.name ?? "-",
                     rating: gameDetailResponse.rating ?? 0.0,
-                    ratingTop: gameDetailResponse.ratingTop ?? 0,
                     releaseDate: gameDetailResponse.released ?? "-",
                     esrbRating: gameDetailResponse.esrbRating?.name ?? "-",
                     imageUrl: gameDetailResponse.backgroundImage ??

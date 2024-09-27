@@ -14,18 +14,16 @@ struct GameDetailResponse: Codable {
     let released: String?
     let backgroundImage, backgroundImageAdditional: String?
     let rating: Double?
-    let ratingTop: Int?
     let platforms: [PlatformElement]?
     let publishers: [Developer]?
     let esrbRating: EsrbRating?
     let descriptionRaw: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id, name, released
         case backgroundImage = "background_image"
         case backgroundImageAdditional = "background_image_additional"
         case rating
-        case ratingTop = "rating_top"
         case platforms, publishers
         case esrbRating = "esrb_rating"
         case descriptionRaw = "description_raw"
@@ -35,8 +33,4 @@ struct GameDetailResponse: Codable {
 // MARK: - Developer
 struct Developer: Codable {
     let name: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case name
-    }
 }

@@ -25,6 +25,7 @@
 		7A62E1562CA486DA009AC2F1 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62E1552CA486DA009AC2F1 /* GameDetailModel.swift */; };
 		7A62E15C2CA4CF43009AC2F1 /* UIView-Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 7A62E15B2CA4CF43009AC2F1 /* UIView-Shimmer */; };
 		7AA4D4742CA592DB00BF1E37 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4D4732CA592DB00BF1E37 /* ProfileViewController.swift */; };
+		7AF6F13B2CA682F2005B39EC /* GameON-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AF6F13A2CA682E2005B39EC /* GameON-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		7A62E1532CA485DF009AC2F1 /* GameDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailResponse.swift; sourceTree = "<group>"; };
 		7A62E1552CA486DA009AC2F1 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		7AA4D4732CA592DB00BF1E37 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7AF6F13A2CA682E2005B39EC /* GameON-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GameON-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		7A199E882CA02F200031E896 /* FileSystem */ = {
 			isa = PBXGroup;
 			children = (
+				7AF6F13A2CA682E2005B39EC /* GameON-Info.plist */,
 				7A199E7B2CA02DE40031E896 /* Assets.xcassets */,
 				7A199E7D2CA02DE40031E896 /* LaunchScreen.storyboard */,
 				7A199E802CA02DE40031E896 /* Info.plist */,
@@ -223,6 +226,7 @@
 			files = (
 				7A199E7F2CA02DE40031E896 /* LaunchScreen.storyboard in Resources */,
 				7A199E7C2CA02DE40031E896 /* Assets.xcassets in Resources */,
+				7AF6F13B2CA682F2005B39EC /* GameON-Info.plist in Resources */,
 				7A199E7A2CA02DE20031E896 /* Main.storyboard in Resources */,
 				7A62E1372CA40859009AC2F1 /* GameTableViewCell.xib in Resources */,
 			);

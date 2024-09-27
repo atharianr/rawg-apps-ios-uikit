@@ -8,14 +8,14 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
+
     @IBOutlet weak var profileImageView: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-    
+
     func setupView() {
         profileImageView.layer.borderWidth = 1
         profileImageView.layer.masksToBounds = false
