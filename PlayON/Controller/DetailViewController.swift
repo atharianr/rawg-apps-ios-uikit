@@ -7,6 +7,7 @@
 
 import UIKit
 import UIView_Shimmer
+import Kingfisher
 
 extension UILabel: @retroactive ShimmeringViewProtocol {}
 
@@ -34,7 +35,11 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var gameDescriptionLabel: UILabel!
 
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
+
     var gameModel: GameModel?
+
+    private var isFavorite = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +48,11 @@ class DetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         getGameDetail()
+    }
+
+    @IBAction func setFavorite(_ sender: UIBarButtonItem) {
+        isFavorite = !isFavorite
+        favoriteButton.image = UIImage(systemName: isFavorite ? "heart.fill" : "heart")
     }
 
     func getGameDetail() {

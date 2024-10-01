@@ -239,8 +239,16 @@
                             <constraint firstItem="bgu-rB-mlY" firstAttribute="top" secondItem="Hs4-GX-jSX" secondAttribute="top" id="gNT-ZH-h9U"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Kuy-8d-Q87"/>
+                    <navigationItem key="navigationItem" id="Kuy-8d-Q87">
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart" catalog="system" id="iT5-T5-MRk">
+                            <color key="tintColor" name="ColorPrimary"/>
+                            <connections>
+                                <action selector="setFavorite:" destination="BW4-zR-41f" id="HBL-9O-KO4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="favoriteButton" destination="iT5-T5-MRk" id="eY9-Oc-hoQ"/>
                         <outlet property="gameDescriptionLabel" destination="cq3-gI-p4j" id="ldE-DV-f29"/>
                         <outlet property="gameEsrbRatingLabel" destination="mvv-CS-NyJ" id="bxb-3q-KeE"/>
                         <outlet property="gameImage" destination="60V-Un-Zpm" id="KVc-Cs-T7o"/>
@@ -296,6 +304,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hgq-lB-oX8" kind="relationship" relationship="viewControllers" id="F6l-sD-Gzu"/>
+                        <segue destination="Rbq-U0-lur" kind="relationship" relationship="viewControllers" id="Eyd-rP-djl"/>
                         <segue destination="iMu-dK-nqI" kind="relationship" relationship="viewControllers" id="2Hv-vz-k6Z"/>
                     </connections>
                 </tabBarController>
@@ -370,12 +379,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnL-jK-utc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="897"/>
+            <point key="canvasLocation" x="2059" y="935"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="T3s-xD-uyV">
+            <objects>
+                <viewController id="Rbq-U0-lur" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rps-SU-Woj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="npP-gO-s4v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart" catalog="system" id="Mnu-c8-BUL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mGZ-5V-hS8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="935"/>
         </scene>
     </scenes>
     <resources>
         <image name="ProfilePicture" width="360" height="540"/>
         <image name="gamecontroller" catalog="system" width="128" height="79"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="ColorPrimary">
