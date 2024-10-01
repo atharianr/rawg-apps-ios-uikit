@@ -14,7 +14,7 @@ class NetworkService {
         guard let filePath = Bundle.main.path(forResource: "GameON-Info", ofType: "plist") else {
             fatalError("Couldn't find file 'GameON-Info.plist'.")
         }
-        
+
         let plist = NSDictionary(contentsOfFile: filePath)
         guard let value = plist?.object(forKey: "API_KEY") as? String else {
             fatalError("Couldn't find key 'API_KEY' in 'GameON-Info.plist'.")

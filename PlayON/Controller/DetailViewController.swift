@@ -39,11 +39,17 @@ class DetailViewController: UIViewController {
 
     var gameModel: GameModel?
 
+    private var databaseService: DatabaseService?
+
     private var isFavorite = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        databaseService = DatabaseService()
+
         setupView()
+        checkIsAlreadyFavorite()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,8 +57,52 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func setFavorite(_ sender: UIBarButtonItem) {
-        isFavorite = !isFavorite
+        isFavorite.toggle()
+
+        if isFavorite {
+            addFavorite()
+        } else {
+            deleteFavorite()
+        }
+
         favoriteButton.image = UIImage(systemName: isFavorite ? "heart.fill" : "heart")
+    }
+
+    func addFavorite() {
+        Task(priority: .background) {
+            let game = GameModel(
+                id: gameModel?.id ?? 0,
+                title: gameModel?.title ?? "",
+                rating: gameModel?.rating ?? 0.0,
+                releaseDate: gameModel?.releaseDate ?? "",
+                imageUrl: gameModel?.imageUrl ?? ""
+            )
+            let gameId = await databaseService?.addFavorite(game)
+            debugPrint("gameId: \(gameId!)")
+        }
+    }
+
+    func deleteFavorite() {
+        Task(priority: .background) {
+            if let gameId = gameModel?.id {
+                let isDeleted = await databaseService?.deleteFavorite(gameId)
+                debugPrint("\(gameId) isDeleted: \(isDeleted ?? false)")
+            } else {
+                debugPrint("gameModel is nil, deletion not attempted.")
+            }
+        }
+    }
+
+    func checkIsAlreadyFavorite() {
+        Task(priority: .background) {
+            if let gameId = gameModel?.id {
+                isFavorite = await databaseService?.isAlreadyFavorite(gameId) ?? false
+                favoriteButton.image = UIImage(systemName: isFavorite ? "heart.fill" : "heart")
+                debugPrint("\(gameId) isFavorite: \(isFavorite)")
+            } else {
+                debugPrint("gameModel is nil, check favorite not attempted.")
+            }
+        }
     }
 
     func getGameDetail() {
