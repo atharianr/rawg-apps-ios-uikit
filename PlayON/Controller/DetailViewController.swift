@@ -49,10 +49,10 @@ class DetailViewController: UIViewController {
         databaseService = DatabaseService()
 
         setupView()
-        checkIsAlreadyFavorite()
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        checkIsAlreadyFavorite()
         getGameDetail()
     }
 

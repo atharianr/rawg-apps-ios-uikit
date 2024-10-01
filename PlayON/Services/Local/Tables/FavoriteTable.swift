@@ -10,7 +10,7 @@ import SQLite
 class FavoriteTable {
 
     // Increment 'dbVersion' if adding new column in table
-    static let shared = FavoriteTable(dbConnection: DatabaseManager(dbVersion: 2).getDb())
+    static let shared = FavoriteTable(dbConnection: DatabaseManager(dbVersion: 1).getDb())
 
     private let gamesTable = Table("games")
     private let gameId = Expression<Int>("gameId")
@@ -45,7 +45,7 @@ class FavoriteTable {
                 self.gameTitle <- game.title,
                 self.gameRating <- game.rating,
                 self.gameReleaseDate <- game.releaseDate,
-                self.gameImageUrl <- game.releaseDate
+                self.gameImageUrl <- game.imageUrl
             )
             let gameId = try dbConnection.run(insert)
 

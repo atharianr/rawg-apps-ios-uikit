@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A1975CD2CAC6DEE00B1A9FF /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1975CC2CAC6DEE00B1A9FF /* FavoriteViewController.swift */; };
 		7A199E732CA02DE20031E896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A199E722CA02DE20031E896 /* AppDelegate.swift */; };
 		7A199E752CA02DE20031E896 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A199E742CA02DE20031E896 /* SceneDelegate.swift */; };
 		7A199E772CA02DE20031E896 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A199E762CA02DE20031E896 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A1975CC2CAC6DEE00B1A9FF /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		7A199E6F2CA02DE20031E896 /* GameON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A199E722CA02DE20031E896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A199E742CA02DE20031E896 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				7A62E1342CA40859009AC2F1 /* GameTableViewCell.swift */,
 				7AA4D4732CA592DB00BF1E37 /* ProfileViewController.swift */,
 				7A199E762CA02DE20031E896 /* ViewController.swift */,
+				7A1975CC2CAC6DEE00B1A9FF /* FavoriteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				7A62E14C2CA44D3D009AC2F1 /* NetworkService.swift in Sources */,
 				7A62E14E2CA4555F009AC2F1 /* GameModel.swift in Sources */,
 				7AA4D4742CA592DB00BF1E37 /* ProfileViewController.swift in Sources */,
+				7A1975CD2CAC6DEE00B1A9FF /* FavoriteViewController.swift in Sources */,
 				7ADC4ECC2CAC59100049B00C /* DatabaseService.swift in Sources */,
 				7A62E1362CA40859009AC2F1 /* GameTableViewCell.swift in Sources */,
 				7ADC4EC72CAC51290049B00C /* DatabaseManager.swift in Sources */,
