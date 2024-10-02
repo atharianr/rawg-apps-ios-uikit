@@ -9,8 +9,6 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
-    var onDismissCallback: (() -> Void)?
-
     @IBOutlet weak var profileImageView: UIImageView!
 
     @IBOutlet weak var saveButton: UIButton!
@@ -35,15 +33,6 @@ class EditProfileViewController: UIViewController {
         setupForm()
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        onDismissCallback?()
-    }
-
-    @IBAction func onEditImageClicked(_ sender: UIButton) {
-        self.present(imagePicker, animated: true, completion: nil)
-    }
-
     @IBAction func onSaveClicked(_ sender: UIButton) {
         checkFormCompletion()
     }
@@ -52,7 +41,13 @@ class EditProfileViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @objc func imageClicked() {
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+
     private func setupView() {
+        let profileImageTapGesture = UITapGestureRecognizer(target: self, action: #selector(imageClicked))
+
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
@@ -62,6 +57,8 @@ class EditProfileViewController: UIViewController {
         profileImageView.layer.borderColor = UIColor.colorPrimary.cgColor
         profileImageView.layer.cornerRadius = 16
         profileImageView.clipsToBounds = true
+        profileImageView.isUserInteractionEnabled = true
+        profileImageView.addGestureRecognizer(profileImageTapGesture)
 
         cancelButton.tintColor = .colorPrimary
         saveButton.tintColor = .colorPrimary
@@ -101,7 +98,7 @@ class EditProfileViewController: UIViewController {
 
             alert.addAction(UIAlertAction(title: "Yes", style: .default) { _ in
                 self.saveData(name: name, occupation: occupation, organization: organization, image: data)
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             })
 
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))

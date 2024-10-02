@@ -28,15 +28,6 @@ class ProfileViewController: UIViewController {
         bindData()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "moveToEditProfile" {
-            let destination = segue.destination as? EditProfileViewController
-            destination?.onDismissCallback = {
-                self.bindData()
-            }
-        }
-    }
-
     @IBAction func onEditClicked(_ sender: UIButton) {
         self.performSegue(withIdentifier: "moveToEditProfile", sender: self)
     }
