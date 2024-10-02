@@ -34,7 +34,7 @@ class FavoriteViewController: UIViewController {
         getAllFavoriteGames()
     }
 
-    func getAllFavoriteGames() {
+    private func getAllFavoriteGames() {
         Task(priority: .background) {
             let favoriteGames = await databaseService?.getAllFavorites() ?? []
             let hasFavorites = !favoriteGames.isEmpty
@@ -74,7 +74,7 @@ extension FavoriteViewController: UITableViewDataSource {
         return UITableViewCell()
     }
 
-    func setupCellView(cell: GameTableViewCell, game: GameModel) -> GameTableViewCell {
+    private func setupCellView(cell: GameTableViewCell, game: GameModel) -> GameTableViewCell {
         cell.imageLoadingIndicator.isHidden = false
         cell.imageLoadingIndicator.startAnimating()
 

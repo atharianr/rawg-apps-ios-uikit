@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         getGameList()
     }
 
-    func getGameList() {
+    private func getGameList() {
         network?.getGameList { gameList in
             self.gameList = gameList
             self.gameTableView.reloadData()
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         loadingIndicator.startAnimating()
     }
 
-    func getSearchGameList(query: String) {
+    private func getSearchGameList(query: String) {
         network?.getSearchGameList(query: query, completion: { gameList in
             self.gameList = gameList
             self.gameTableView.reloadData()
@@ -86,7 +86,7 @@ extension ViewController: UITableViewDataSource {
         return UITableViewCell()
     }
 
-    func setupCellView(cell: GameTableViewCell, game: GameModel) -> GameTableViewCell {
+    private func setupCellView(cell: GameTableViewCell, game: GameModel) -> GameTableViewCell {
         cell.imageLoadingIndicator.isHidden = false
         cell.imageLoadingIndicator.startAnimating()
 

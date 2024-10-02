@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController {
         editButton.tintColor = .colorPrimary
     }
 
-    func bindData() {
+    private func bindData() {
         ProfileModel.synchronize()
 
         profileBannerImageView.image = UIImage(data: ProfileModel.image)

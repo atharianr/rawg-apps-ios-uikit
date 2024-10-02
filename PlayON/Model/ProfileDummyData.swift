@@ -17,7 +17,7 @@ class ProfileDummyData {
         completion()
     }
 
-    func imageToData(_ title: String) -> Data? {
+    private func imageToData(_ title: String) -> Data? {
         guard let img = UIImage(named: title) else { return nil }
         return img.jpegData(compressionQuality: 1)
     }

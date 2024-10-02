@@ -68,7 +68,7 @@ class DetailViewController: UIViewController {
         favoriteButton.image = UIImage(systemName: isFavorite ? "heart.fill" : "heart")
     }
 
-    func addFavorite() {
+    private func addFavorite() {
         Task(priority: .background) {
             let game = GameModel(
                 id: gameModel?.id ?? 0,
@@ -82,7 +82,7 @@ class DetailViewController: UIViewController {
         }
     }
 
-    func deleteFavorite() {
+    private func deleteFavorite() {
         Task(priority: .background) {
             if let gameId = gameModel?.id {
                 let isDeleted = await databaseService?.deleteFavorite(gameId)
@@ -93,7 +93,7 @@ class DetailViewController: UIViewController {
         }
     }
 
-    func checkIsAlreadyFavorite() {
+    private func checkIsAlreadyFavorite() {
         Task(priority: .background) {
             if let gameId = gameModel?.id {
                 isFavorite = await databaseService?.isAlreadyFavorite(gameId) ?? false
@@ -105,7 +105,7 @@ class DetailViewController: UIViewController {
         }
     }
 
-    func getGameDetail() {
+    private func getGameDetail() {
         let network = NetworkService()
         network.getGameDetail(id: gameModel?.id ?? 0, completion: { game in
             self.bindData(gameDetailModel: game)
