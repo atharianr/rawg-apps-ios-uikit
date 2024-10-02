@@ -113,7 +113,7 @@ class DetailViewController: UIViewController {
     }
 
     private func setupView() {
-        view.setTemplateWithSubviews(true, viewBackgroundColor: UIColor.gray)
+        view.setTemplateWithSubviews(true, viewBackgroundColor: .gray)
 
         smallGameImage.layer.masksToBounds = false
         smallGameImage.layer.cornerRadius = 8
