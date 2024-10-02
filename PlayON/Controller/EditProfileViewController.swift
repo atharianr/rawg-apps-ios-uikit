@@ -13,8 +13,6 @@ class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
 
-    @IBOutlet weak var cancelButton: UIButton!
-
     @IBOutlet weak var nameTextField: UITextField!
 
     @IBOutlet weak var occupationTextField: UITextField!
@@ -37,10 +35,6 @@ class EditProfileViewController: UIViewController {
         checkFormCompletion()
     }
 
-    @IBAction func onCancelClicked(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
     @objc func imageClicked() {
         self.present(imagePicker, animated: true, completion: nil)
     }
@@ -60,7 +54,6 @@ class EditProfileViewController: UIViewController {
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(profileImageTapGesture)
 
-        cancelButton.tintColor = .colorPrimary
         saveButton.tintColor = .colorPrimary
     }
 

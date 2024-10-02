@@ -455,27 +455,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c5P-yp-EkR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2L-dm-Ekv">
                                 <rect key="frame" x="16" y="505" width="288" height="34.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ku-Xp-g2u">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="Cancel"/>
-                                        <connections>
-                                            <action selector="onCancelClicked:" destination="5f7-o3-7c2" eventType="touchUpInside" id="xHy-Ae-fpG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2L-dm-Ekv">
-                                        <rect key="frame" x="148" y="0.0" width="140" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Save"/>
-                                        <connections>
-                                            <action selector="onSaveClicked:" destination="5f7-o3-7c2" eventType="touchUpInside" id="AbC-ox-9Lc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="onSaveClicked:" destination="5f7-o3-7c2" eventType="touchUpInside" id="AbC-ox-9Lc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L5w-5v-HrG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -488,11 +475,9 @@
                             <constraint firstItem="8wP-BS-xem" firstAttribute="leading" secondItem="L5w-5v-HrG" secondAttribute="leading" constant="16" id="8St-pn-37a"/>
                             <constraint firstItem="tSL-1h-IgS" firstAttribute="top" secondItem="XD5-60-2oe" secondAttribute="bottom" constant="16" id="9kD-F9-IEa"/>
                             <constraint firstItem="tSL-1h-IgS" firstAttribute="leading" secondItem="L5w-5v-HrG" secondAttribute="leading" constant="16" id="ALb-F5-VQB"/>
-                            <constraint firstItem="c5P-yp-EkR" firstAttribute="leading" secondItem="L5w-5v-HrG" secondAttribute="leading" constant="16" id="Aah-XW-28r"/>
-                            <constraint firstItem="c5P-yp-EkR" firstAttribute="top" secondItem="ZDi-h6-MTc" secondAttribute="bottom" constant="32" id="Ao4-9p-1hw"/>
+                            <constraint firstItem="L5w-5v-HrG" firstAttribute="trailing" secondItem="q2L-dm-Ekv" secondAttribute="trailing" constant="16" id="BvY-A3-GOM"/>
                             <constraint firstItem="L5w-5v-HrG" firstAttribute="trailing" secondItem="XD5-60-2oe" secondAttribute="trailing" constant="16" id="Bvi-YN-W2u"/>
                             <constraint firstItem="t4U-yo-qtn" firstAttribute="top" secondItem="L5w-5v-HrG" secondAttribute="top" constant="24" id="FwX-1f-dip"/>
-                            <constraint firstItem="L5w-5v-HrG" firstAttribute="trailing" secondItem="c5P-yp-EkR" secondAttribute="trailing" constant="16" id="Hca-xO-HqC"/>
                             <constraint firstItem="LwC-zJ-CCY" firstAttribute="top" secondItem="Lxo-So-eJx" secondAttribute="bottom" constant="8" id="L8z-xM-rxS"/>
                             <constraint firstItem="L5w-5v-HrG" firstAttribute="trailing" secondItem="ZDi-h6-MTc" secondAttribute="trailing" constant="16" id="LB3-v6-G3I"/>
                             <constraint firstItem="wHB-uh-51l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t4U-yo-qtn" secondAttribute="leading" constant="4" id="MKx-WD-DmN"/>
@@ -500,6 +485,7 @@
                             <constraint firstItem="ZDi-h6-MTc" firstAttribute="top" secondItem="tSL-1h-IgS" secondAttribute="bottom" constant="8" id="UoY-pi-sG1"/>
                             <constraint firstItem="Lxo-So-eJx" firstAttribute="leading" secondItem="L5w-5v-HrG" secondAttribute="leading" constant="16" id="Xne-VE-4Mp"/>
                             <constraint firstItem="LwC-zJ-CCY" firstAttribute="leading" secondItem="L5w-5v-HrG" secondAttribute="leading" constant="16" id="aW8-NC-q0Y"/>
+                            <constraint firstItem="q2L-dm-Ekv" firstAttribute="leading" secondItem="L5w-5v-HrG" secondAttribute="leading" constant="16" id="aok-GN-cje"/>
                             <constraint firstItem="L5w-5v-HrG" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8wP-BS-xem" secondAttribute="trailing" constant="16" id="bsO-T4-97k"/>
                             <constraint firstItem="8wP-BS-xem" firstAttribute="top" secondItem="LwC-zJ-CCY" secondAttribute="bottom" constant="16" id="cNj-MO-Ydx"/>
                             <constraint firstItem="t4U-yo-qtn" firstAttribute="centerX" secondItem="m2T-fh-xeN" secondAttribute="centerX" id="cY8-Ca-2SL"/>
@@ -508,6 +494,7 @@
                             <constraint firstItem="wHB-uh-51l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="t4U-yo-qtn" secondAttribute="top" constant="4" id="dG3-l2-RG4"/>
                             <constraint firstItem="XD5-60-2oe" firstAttribute="leading" secondItem="L5w-5v-HrG" secondAttribute="leading" constant="16" id="jjR-A5-hq5"/>
                             <constraint firstItem="XD5-60-2oe" firstAttribute="top" secondItem="8wP-BS-xem" secondAttribute="bottom" constant="8" id="pLR-oJ-fBw"/>
+                            <constraint firstItem="q2L-dm-Ekv" firstAttribute="top" secondItem="ZDi-h6-MTc" secondAttribute="bottom" constant="32" id="wRc-Q7-zj1"/>
                             <constraint firstItem="Lxo-So-eJx" firstAttribute="top" secondItem="t4U-yo-qtn" secondAttribute="bottom" constant="32" id="xRt-w8-nSr"/>
                             <constraint firstItem="L5w-5v-HrG" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t4U-yo-qtn" secondAttribute="trailing" constant="16" id="yWL-CW-igL"/>
                             <constraint firstItem="ZDi-h6-MTc" firstAttribute="leading" secondItem="L5w-5v-HrG" secondAttribute="leading" constant="16" id="ywi-26-Wna"/>
@@ -516,7 +503,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="Nik-dH-E3E"/>
                     <connections>
-                        <outlet property="cancelButton" destination="6ku-Xp-g2u" id="dyU-lp-oDk"/>
                         <outlet property="nameTextField" destination="LwC-zJ-CCY" id="jV0-uh-6Ee"/>
                         <outlet property="occupationTextField" destination="XD5-60-2oe" id="2mc-px-TWe"/>
                         <outlet property="organizationTextField" destination="ZDi-h6-MTc" id="Mr7-47-QO9"/>
