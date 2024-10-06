@@ -523,22 +523,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xED-uJ-tNP">
-                                <rect key="frame" x="0.0" y="64" width="310.5" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0fd-O2-Vmn">
-                                <rect key="frame" x="24" y="250" width="262.5" height="83.5"/>
+                                <rect key="frame" x="24" y="250" width="272" height="83.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeartBreakIcon" translatesAutoresizingMaskIntoConstraints="NO" id="AD0-zJ-TnB">
-                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="64"/>
                                         <color key="tintColor" name="ColorPrimary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="Bfz-w1-xuk"/>
-                                            <constraint firstAttribute="width" constant="64" id="JKQ-8k-ZBP"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any favorite games :(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bq-vB-Ixx">
-                                        <rect key="frame" x="0.0" y="64" width="262.5" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="64" width="272" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" name="ColorSecondary"/>
                                         <nil key="highlightedColor"/>
@@ -577,7 +576,6 @@
         <!--Favorite-->
         <scene sceneID="3rO-Gt-3y0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yvv-y2-IEp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Pa-9z-Uiz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorite" image="heart" catalog="system" id="Mnu-c8-BUL"/>
                     <toolbarItems/>
@@ -597,6 +595,7 @@
                         <segue destination="Rbq-U0-lur" kind="relationship" relationship="rootViewController" id="ATG-PP-Kqe"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yvv-y2-IEp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1059.375" y="934.85915492957747"/>
         </scene>
@@ -628,7 +627,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MIO-6e-wnc"/>
+        <segue reference="CqN-iF-Rb5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="HeartBreakIcon" width="170.5" height="170.5"/>
